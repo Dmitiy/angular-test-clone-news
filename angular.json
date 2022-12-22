@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular_test_clone_news": {
+    "angular-test-clone-news": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular_test_clone_news:build:production"
+              "browserTarget": "angular-test-clone-news:build:production"
             },
             "development": {
-              "browserTarget": "angular_test_clone_news:build:development"
+              "browserTarget": "angular-test-clone-news:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular_test_clone_news:build"
+            "browserTarget": "angular-test-clone-news:build"
           }
         },
         "test": {

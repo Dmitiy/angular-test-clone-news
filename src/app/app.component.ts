@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular_test_clone_news';
-	isValidUser = false;
+  title = 'angular-test-clone-news';
+  isValidUser = false;
 
 }
