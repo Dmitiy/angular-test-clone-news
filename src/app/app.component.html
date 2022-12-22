@@ -1,0 +1,17 @@
+<div class="page">
+	<header class="header">
+		<app-header></app-header>
+		<app-navbar></app-navbar>
+		<nav class="nav nav-auth">
+			<a routerLink="/{{isValidUser ? 'logout' : 'login'}}">
+				{{isValidUser ? 'logout' : 'login' }}
+			</a>
+		</nav>
+		</header>
+		<main class="main">
+		<router-outlet></router-outlet>
+	</main>
+	<footer class="footer">
+		<app-footer></app-footer>
+	</footer>
+</div>

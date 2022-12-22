@@ -1,0 +1,14 @@
+.nav-links,
+ul,
+ul li {
+	display: flex;
+	align-items: center;
+}
+.nav-links {
+	li {
+		padding-right: 4px;
+	}
+}
+.devider {
+	color: #000;
+}

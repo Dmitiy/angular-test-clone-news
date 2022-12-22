@@ -1,0 +1,10 @@
+<nav class="nav nav-links">
+	<ul>
+		<li *ngFor="let link of headerTags; index as i">
+			<span *ngIf="i !== 0" class="devider">|&nbsp;</span>
+			<a routerLink="/{{link}}" routerLinkActive="active" [tabindex]="i" (click)="onOpenLink(link)">
+				{{link}}
+			</a>
+		</li>
+		</ul>
+</nav>

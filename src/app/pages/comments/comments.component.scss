@@ -1,0 +1,22 @@
+.comments-list {
+    li {
+        list-style-type: disc;
+        list-style-position: inside;
+    }
+
+    li+li {
+        margin-bottom: 16px;
+    }
+
+    p {
+        margin: 4px 0;
+        padding-left: 18px;
+    }
+
+    a {
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
