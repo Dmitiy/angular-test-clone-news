@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IUser } from 'src/app/models/IUser';
@@ -5,6 +6,8 @@ import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-user',
+  standalone: true,
+  imports: [CommonModule, UserComponent],
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss']
 })

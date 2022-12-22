@@ -1,35 +1,31 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdvancedSearchComponent } from './pages/advanced-search/advanced-search.component';
-import { AskComponent } from './pages/ask/ask.component';
-import { CommentsComponent } from './pages/comments/comments.component';
-import { JobsComponent } from './pages/jobs/jobs.component';
-import { LoginComponent } from './pages/login/login.component';
-import { LogoutComponent } from './pages/logout/logout.component';
-import { NewComponent } from './pages/new/new.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { PastComponent } from './pages/past/past.component';
-import { ShowComponent } from './pages/show/show.component';
-import { SubmitComponent } from './pages/submit/submit.component';
-import { UserComponent } from './pages/user/user.component';
+
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/', pathMatch: 'full' },
-	{ path: '', component: AdvancedSearchComponent },
+	{
+		path: '',
+		loadComponent: () => import('./pages/advanced-search/advanced-search.component').then(m => m.AdvancedSearchComponent)
+	},
 
-	{ path: 'users/:username', component: UserComponent },
+	{
+		path: 'users/:username',
+		loadComponent: () => import('./pages/user/user.component').then(m => m.UserComponent)
+	},
 
-	{ path: 'new', component: NewComponent },
-	{ path: 'past', component: PastComponent },
-	{ path: 'comments', component: CommentsComponent },
-	{ path: 'ask', component: AskComponent },
-	{ path: 'show', component: ShowComponent },
-	{ path: 'jobs', component: JobsComponent },
-	{ path: 'submit', component: SubmitComponent },
+	{ path: 'new', loadComponent: () => import('./pages/new/new.component').then(m => m.NewComponent) },
+	{ path: 'past', loadComponent: () => import('./pages/past/past.component').then(m => m.PastComponent) },
+	{ path: 'comments', loadComponent: () => import('./pages/comments/comments.component').then(m => m.CommentsComponent) },
+	{ path: 'ask', loadComponent: () => import('./pages/ask/ask.component').then(m => m.AskComponent) },
+	{ path: 'show', loadComponent: () => import('./pages/show/show.component').then(m => m.ShowComponent) },
+	{ path: 'jobs', loadComponent: () => import('./pages/jobs/jobs.component').then(m => m.JobsComponent) },
+	{ path: 'submit', loadComponent: () => import('./pages/submit/submit.component').then(m => m.SubmitComponent) },
 
-	{ path: 'login', component: LoginComponent },
-	{ path: 'logout', component: LogoutComponent },
-	{ path: '**', component: NotFoundComponent },
+	{ path: 'login', loadComponent: () => import('./pages/login/login.component').then(m => m.LoginComponent) },
+	{ path: 'logout', loadComponent: () => import('./pages/logout/logout.component').then(m => m.LogoutComponent) },
+
+	{ path: '**', loadComponent: () => import('./pages/not-found/not-found.component').then(m => m.NotFoundComponent) },
 ];
 
 @NgModule({

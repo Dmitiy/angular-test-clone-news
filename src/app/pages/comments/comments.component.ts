@@ -1,9 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NewsService } from 'src/app/services/news-service';
 
 @Component({
 	selector: 'app-comments',
+	standalone: true,
+	imports: [CommonModule, CommentsComponent],
 	templateUrl: './comments.component.html',
 	styleUrls: ['./comments.component.scss']
 })
