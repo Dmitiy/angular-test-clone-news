@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng deploy"
+    "deploy": "ng deploy --base-href=/angular-test-clone-news/"
   },
   "private": true,
   "dependencies": {

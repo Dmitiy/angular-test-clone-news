@@ -12,7 +12,7 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
-  userProfile: IUser | undefined = {} as IUser;
+  userProfile$: IUser | undefined = {} as IUser;
 
   constructor(
     private route: ActivatedRoute,
@@ -27,7 +27,7 @@ export class UserComponent implements OnInit {
     let username: string = this.route.snapshot.paramMap.get('username')!;
 
     this.usersService.getUser(username).subscribe(res => {
-      this.userProfile = res;
+      this.userProfile$ = res;
     });
   }
 

@@ -1,6 +1,6 @@
 <ul class="user">
-    <li>user: {{userProfile?.username}}</li>
-    <li>created: {{userProfile?.created_at}}</li>
-    <li>karma: {{userProfile?.karma}}</li>
-    <li>about: <span [innerHTML]="userProfile?.about"></span></li>
+    <li>user: {{userProfile$?.username}}</li>
+    <li>created: {{userProfile$?.created_at | date:'mediumDate'}}</li>
+    <li>karma: {{userProfile$?.karma}}</li>
+    <li>about: <span [innerHTML]="userProfile$?.about"></span></li>
 </ul>
