@@ -1,4 +1,4 @@
-# [Тестовое задание](https://dmitiy.github.io/Angular_test_news_clone/):
+# [Тестовое задание](https://dmitiy.github.io/angular_test_news_clone/):
 
 Нужно сделать клон **hacker news** ( https://news.ycombinator.com )
 

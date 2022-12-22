@@ -9,6 +9,7 @@ node_modules
 /dist
 /dist/out-tsc
 /build
+/docs
 
 # IDEA Ignores #
 ################
