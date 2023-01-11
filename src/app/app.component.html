@@ -3,12 +3,12 @@
 		<app-header></app-header>
 		<app-navbar></app-navbar>
 		<nav class="nav nav-auth">
-			<a routerLink="/{{isValidUser ? 'logout' : 'login'}}">
+			<a target="_self" mat-flat-button color="primary" routerLink="/{{isValidUser ? 'logout' : 'login'}}">
 				{{isValidUser ? 'logout' : 'login' }}
 			</a>
 		</nav>
-		</header>
-		<main class="main">
+	</header>
+	<main class="main">
 		<router-outlet></router-outlet>
 	</main>
 	<footer class="footer">

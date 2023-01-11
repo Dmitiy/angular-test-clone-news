@@ -1,3 +1,8 @@
+interface IHighlightItem {
+    value: string;
+    matchLevel: string | null;
+    matchedWords: string[];
+}
 export interface INews {
     created_at: string | null;
     title: string | null;
@@ -13,4 +18,11 @@ export interface INews {
     parent_id: number | null;
     created_at_i: number | null;
 
+    _tags: string[];
+    objectID: number;
+    _highlightResult: {
+        title: IHighlightItem,
+        url: IHighlightItem,
+        author: IHighlightItem
+    }
 }
