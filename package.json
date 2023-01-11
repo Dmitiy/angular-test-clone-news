@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng deploy --base-href=/angular-test-clone-news",
+    "deploy": "ng deploy --base-href=/angular-test-clone-news/",
     "lint": "eslint --fix --ext .ts .",
     "prettier-check": "npx prettier --check src/**/*.{ts}",
     "prettier-write": "npx prettier --write src/**/*.{ts}"
