@@ -76,3 +76,4 @@ CVS
 xcuserdata/
 
 .eslintcache
+pnpm-lock.yaml

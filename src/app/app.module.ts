@@ -17,21 +17,21 @@ import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 @NgModule({
-	declarations: [AppComponent, ...COMPONENTS_LIST],
-	imports: [
-		BrowserModule,
-		FormsModule,
-		ReactiveFormsModule,
-		AppRoutingModule,
-		HttpClientModule,
-		BrowserAnimationsModule,
-		MaterialModule,
-	],
-	providers: [
-		{ provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
-		{ provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } },
-		{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },
-	],
-	bootstrap: [AppComponent],
+    declarations: [AppComponent, ...COMPONENTS_LIST],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+    ],
+    providers: [
+        { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
+        { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } },
+        { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },
+    ],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}
