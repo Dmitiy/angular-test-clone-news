@@ -1,0 +1,25 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+        Username: demo <br />
+        Email: demo@example.com
+    </div>
+    <div>
+        <label for="name">
+            <mat-icon fontIcon="perm_identity"></mat-icon> Username
+        </label>
+        <input id="name" type="text" formControlName="name" placeholder="demo">
+    </div>
+
+    <div>
+        <label for="email">
+            <mat-icon fontIcon="email"></mat-icon> Email
+        </label>
+        <input id="email" type="email" formControlName="email" placeholder="demo@example.com">
+    </div>
+
+    <button class="button" mat-raised-button color="primary" type="submit">
+        <mat-icon fontIcon="home"></mat-icon>
+        Login
+    </button>
+
+</form>
