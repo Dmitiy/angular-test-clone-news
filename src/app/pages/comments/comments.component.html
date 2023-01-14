@@ -1,11 +1,9 @@
 <ul class="comments-list">
-	<li *ngFor="let comment of commentsList">
+	<li *ngFor="let comment of commentsList$">
 		<span>
 			<a (click)="goToUser(comment.author)">{{comment.author}}</a>&nbsp;
 			<span>created_at: {{comment.created_at | date }}</span>
 		</span>
 		<p [innerHtml]="comment.comment_text"></p>
-
-		<!-- <pre>{{comment | json}}</pre> -->
 	</li>
 </ul>

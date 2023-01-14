@@ -1,15 +1,26 @@
 .page {
-	max-width: 1200px;
-	margin: 16px auto 0;
+    max-width: 1200px;
+    margin: 16px auto 0;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 36px;
+}
+
+.page,
+main {
+    height: 100%;
 }
 
 .nav-auth {
-	margin-left: auto;
+    margin-left: auto;
 }
 
 em {
-	background: #ff0 !important;
-	color: #000 !important;
-	font-style: normal;
-	font-weight: 700;
+    background: #ff0 !important;
+    color: #000 !important;
+    font-style: normal;
+    font-weight: 700;
 }

@@ -7,6 +7,7 @@ const routes: Routes = [
         path: '',
         loadComponent: () =>
             import('./pages/advanced-search/advanced-search.component').then((m) => m.AdvancedSearchComponent),
+        canMatch: [() => true],
     },
 
     {

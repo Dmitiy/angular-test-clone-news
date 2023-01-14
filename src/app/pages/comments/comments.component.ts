@@ -11,7 +11,7 @@ import { NewsService } from 'src/app/services/news-service';
     styleUrls: ['./comments.component.scss'],
 })
 export class CommentsComponent implements OnInit {
-    commentsList: any | [];
+    commentsList$: any | [] = [];
     constructor(private _route: ActivatedRoute, private _router: Router, private _newsService: NewsService) {}
 
     ngOnInit(): void {
@@ -22,7 +22,7 @@ export class CommentsComponent implements OnInit {
         const path: string = this._route.snapshot.routeConfig?.path!;
 
         this._newsService.getNewsByTag(path).subscribe((res) => {
-            this.commentsList = res.hits;
+            this.commentsList$ = res.hits;
         });
     }
 
