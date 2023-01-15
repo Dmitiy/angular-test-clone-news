@@ -11,8 +11,8 @@ export class NavbarComponent {
     constructor(public newsService: NewsService) {}
 
     onOpenLink(tag: string) {
-        this.newsService.getNewsByTag(tag).subscribe((response) => {
-            console.log(response);
-        });
+        // this.newsService.getNewsByTag(tag).subscribe((response) => {
+        //     console.log(response);
+        // });
     }
 }

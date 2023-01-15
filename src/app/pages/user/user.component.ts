@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IUser } from 'src/app/models/IUser';
+import { IUser } from 'src/app/models/IUser.interface';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({

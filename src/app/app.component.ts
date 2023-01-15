@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 import { AuthService } from './services/auth.service';
 
 @Component({
@@ -9,9 +9,10 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent {
     title = 'angular-test-clone-news';
-    isValidUser$: Observable<boolean>;
+    isValidUser$: Observable<boolean> = of(true);
+
     constructor(private _auth: AuthService) {
-        this.isValidUser$ = this._auth.isLoggedIn$;
+        // this.isValidUser$ = this._auth.isLoggedIn$.pipe(map((isLoggedIn) => isLoggedIn));
     }
 
     onLogout() {

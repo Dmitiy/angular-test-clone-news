@@ -1,25 +1,24 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <div>
-        Username: demo <br />
-        Email: demo@example.com
-    </div>
-    <div>
-        <label for="name">
-            <mat-icon fontIcon="perm_identity"></mat-icon> Username
-        </label>
-        <input id="name" type="text" formControlName="name" placeholder="demo">
-    </div>
-
-    <div>
-        <label for="email">
-            <mat-icon fontIcon="email"></mat-icon> Email
-        </label>
-        <input id="email" type="email" formControlName="email" placeholder="demo@example.com">
-    </div>
-
-    <button class="button" mat-raised-button color="primary" type="submit">
-        <mat-icon fontIcon="home"></mat-icon>
-        Login
-    </button>
-
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Username: demo</mat-card-title>
+            <mat-card-subtitle>Email: demo@example.com</mat-card-subtitle>
+        </mat-card-header><br /><br />
+        <mat-card-content>
+            <mat-form-field>
+                <mat-label><mat-icon fontIcon="perm_identity"></mat-icon> Username</mat-label>
+                <input matInput placeholder="demo" formControlName="name">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label><mat-icon fontIcon="email"></mat-icon> Email</mat-label>
+                <input matInput type="email" formControlName="email" placeholder="demo@example.com">
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="button" mat-raised-button color="primary" type="submit">
+                <mat-icon fontIcon="home"></mat-icon>
+                Login
+            </button>
+        </mat-card-actions>
+    </mat-card>
 </form>
