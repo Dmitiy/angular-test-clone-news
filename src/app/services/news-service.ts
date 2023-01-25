@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, shareReplay, Subject, BehaviorSubject, of } from 'rxjs';
 import { apiUrl } from '@api/api';
-import { headerTags, searchParams } from '@models/ITagsFilter.interface';
+import { HEADER_TAGS, SEARCH_PARAMS } from '@models/ITagsFilter.interface';
 @Injectable({
     providedIn: 'root',
 })
 export class NewsService {
-    headerTagsList: string[] = headerTags;
-    searchParamsFilter: string[] = searchParams;
+    headerTagsList: string[] = HEADER_TAGS;
+    searchParamsFilter: string[] = SEARCH_PARAMS;
     url: string = '';
     constructor(private _httpClient: HttpClient) {}
 

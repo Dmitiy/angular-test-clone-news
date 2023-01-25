@@ -2,7 +2,7 @@ export interface ITagsFilter {
     name: string;
 }
 
-export const optionsTags: ITagsFilter[] = [
+export const OPTIONS_TAGS: ITagsFilter[] = [
     { name: 'story' },
     { name: 'comment' },
     { name: 'poll' },
@@ -14,5 +14,5 @@ export const optionsTags: ITagsFilter[] = [
     { name: 'story_:ID' },
 ];
 
-export const searchParams: string[] = ['search', 'search_by_date'];
-export const headerTags: string[] = ['new', 'past', 'comments', 'ask', 'show', 'jobs', 'submit'];
+export const SEARCH_PARAMS: string[] = ['search', 'search_by_date'];
+export const HEADER_TAGS: string[] = ['new', 'past', 'comments', 'ask', 'show', 'jobs', 'submit'];

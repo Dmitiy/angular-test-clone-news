@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
-import { ITagsFilter, optionsTags, searchParams } from '@models/ITagsFilter.interface';
+import { ITagsFilter, OPTIONS_TAGS, SEARCH_PARAMS } from '@models/ITagsFilter.interface';
 import { NewsService } from '@services/news-service';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
@@ -13,8 +13,8 @@ import { map, startWith } from 'rxjs/operators';
 })
 export class AdvancedSearchComponent implements OnInit {
     filteredOptions$: Observable<ITagsFilter[]>;
-    optionsListTags: ITagsFilter[] = optionsTags;
-    searchParamsFilter: string[] = searchParams;
+    optionsListTags: ITagsFilter[] = OPTIONS_TAGS;
+    searchParamsFilter: string[] = SEARCH_PARAMS;
     private _defaultTag = this._filter('front_page');
 
     searchForm = this._formBuilder.group({
