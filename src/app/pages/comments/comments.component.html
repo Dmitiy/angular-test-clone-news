@@ -1,9 +1,12 @@
-<ul class="comments-list">
-	<li *ngFor="let comment of commentsList$">
+<!-- <ul class="comments-list">
+	<li *ngFor="let comment of commentsList$ | async">
 		<span>
 			<a (click)="goToUser(comment.author)">{{comment.author}}</a>&nbsp;
 			<span>created_at: {{comment.created_at | date }}</span>
 		</span>
 		<p [innerHtml]="comment.comment_text"></p>
 	</li>
-</ul>
+</ul> -->
+
+<h1>commetns</h1>
+<pre>{{commentsList$ | json}}</pre>

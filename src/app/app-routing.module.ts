@@ -1,6 +1,6 @@
 import { inject, NgModule } from '@angular/core';
 import { Route, RouterModule, Routes, UrlSegment } from '@angular/router';
-import { AuthGuard } from './guard/auth.guard';
+import { AuthGuard } from './guards/auth.guard';
 import { AuthService } from './services/auth.service';
 
 const routes: Routes = [
@@ -25,43 +25,43 @@ const routes: Routes = [
     {
         path: 'users/:username',
         loadComponent: () => import('./pages/user/user.component').then((m) => m.UserComponent),
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
     },
 
     {
         path: 'new',
         loadComponent: () => import('./pages/new/new.component').then((m) => m.NewComponent),
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
     },
     {
         path: 'past',
         loadComponent: () => import('./pages/past/past.component').then((m) => m.PastComponent),
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
     },
     {
         path: 'comments',
         loadComponent: () => import('./pages/comments/comments.component').then((m) => m.CommentsComponent),
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
     },
     {
         path: 'ask',
         loadComponent: () => import('./pages/ask/ask.component').then((m) => m.AskComponent),
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
     },
     {
         path: 'show',
         loadComponent: () => import('./pages/show/show.component').then((m) => m.ShowComponent),
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
     },
     {
         path: 'jobs',
         loadComponent: () => import('./pages/jobs/jobs.component').then((m) => m.JobsComponent),
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
     },
     {
         path: 'submit',
         loadComponent: () => import('./pages/submit/submit.component').then((m) => m.SubmitComponent),
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
     },
 
     {

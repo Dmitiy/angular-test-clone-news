@@ -7,12 +7,10 @@ import { NewsService } from 'src/app/services/news-service';
     styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-    headerTags: string[] = this.newsService.getAllTags();
+    headerTags: string[] = this.newsService.getHeaderTagsList();
     constructor(public newsService: NewsService) {}
 
     onOpenLink(tag: string) {
-        // this.newsService.getNewsByTag(tag).subscribe((response) => {
-        //     console.log(response);
-        // });
+        this.newsService.getNewsByTag(tag);
     }
 }

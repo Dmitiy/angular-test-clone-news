@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MaterialModule } from 'src/app/material.module';
 import { IMockUser, MockUserEnum } from 'src/app/models/IMockUser.interface';
@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
     imports: [CommonModule, MaterialModule, ReactiveFormsModule],
     templateUrl: './welcome.component.html',
     styleUrls: ['./welcome.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WelcomeComponent {
     loginForm = this._formBuilder.group({

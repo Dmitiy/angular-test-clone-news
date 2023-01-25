@@ -110,6 +110,10 @@ ol ul {
 
 .main {
     padding-bottom: 8px;
+    height: 100%;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
 }
 
 .footer {

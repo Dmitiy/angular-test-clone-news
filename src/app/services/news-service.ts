@@ -1,29 +1,43 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { apiUrl } from 'src/api/api';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable, shareReplay, Subject, BehaviorSubject, of } from 'rxjs';
+import { apiUrl } from '@api/api';
+import { headerTags, searchParams } from '@models/ITagsFilter.interface';
 @Injectable({
     providedIn: 'root',
 })
 export class NewsService {
-    headerTags: string[] = ['new', 'past', 'comments', 'ask', 'show', 'jobs', 'submit'];
-    searchParams: string[] = ['search?query=', 'search_by_date?query='];
-    hasSortedParam = false;
-
+    headerTagsList: string[] = headerTags;
+    searchParamsFilter: string[] = searchParams;
+    url: string = '';
     constructor(private _httpClient: HttpClient) {}
 
-    private _searchUrlByTag = (tag: string) => {
-        const sortedParam = this.hasSortedParam ? this.searchParams[0] : this.searchParams[1];
-        const url = `${apiUrl}${sortedParam}${tag}`;
-        return url;
-    };
-
-    getAllTags() {
-        return this.headerTags;
+    getHeaderTagsList() {
+        return this.headerTagsList;
     }
 
-    getNewsByTag(tag: string = ''): Observable<any> {
-        const url = this._searchUrlByTag(tag);
-        return this._httpClient.get(url);
+    getNewsByTag(tag: string) {
+        const url = `${apiUrl}${tag}`;
+        return this._httpClient.get(url).pipe(shareReplay());
+    }
+
+    prepareUrl(searchParam: string, tagList: string[]) {
+        const tags = tagList.join(',');
+
+        if (tagList?.length > 1) {
+            this.url = `${apiUrl}${searchParam}?tags=(${tags})`;
+        } else if (tagList?.length === 1) {
+            this.url = `${apiUrl}${searchParam}?tags=${tags}`;
+        } else {
+            this.url = `${apiUrl}${searchParam}?query=`;
+        }
+        console.log(this.url, 'prepare');
+    }
+
+    getNews() {
+        console.log('ssssss: ', this.url);
+
+        // return this._httpClient.get(url, { params: new HttpParams({ fromString: tags }) }).pipe(shareReplay());
+        return of(this._httpClient.get(this.url));
     }
 }

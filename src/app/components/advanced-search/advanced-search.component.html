@@ -1,22 +1,19 @@
-<form class="example-form">
+<form class="example-form" [formGroup]="searchForm">
     <mat-icon>search</mat-icon>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Search by tags</mat-label>
-        <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
-        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-            <mat-option *ngFor="let option of filteredOptions$ | async" [value]="option">
-                {{option.name}}
-            </mat-option>
-        </mat-autocomplete>
+    <mat-form-field appearance="fill">
+        <mat-label>Search param</mat-label>
+        <mat-select formControlName="searchParamControl">
+            <mat-option *ngFor="let searchParam of searchParamsFilter"
+                [value]="searchParam">{{searchParam}}</mat-option>
+        </mat-select>
     </mat-form-field>
-    <button mat-raised-button color="accent" aria-label="Search">
+    <mat-form-field appearance="fill">
+        <mat-label>Search by tags</mat-label>
+        <mat-select formControlName="tagsControl" multiple>
+            <mat-option *ngFor="let option of filteredOptions$ | async" [value]="option">{{option.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="accent" aria-label="Search" (click)="onSearch()">
         <mat-icon>search</mat-icon>Поиск...
     </button>
 </form>
-
-<mat-form-field appearance="fill">
-    <mat-label>Toppings</mat-label>
-    <mat-select [formControl]="toppings" multiple>
-        <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-    </mat-select>
-</mat-form-field>
