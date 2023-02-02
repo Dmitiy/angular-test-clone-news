@@ -23,3 +23,10 @@
 ### Configuration
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+
+---
+
+### Project
+
+![version](https://img.shields.io/badge/version-v1.0.0-red)
+![status](https://img.shields.io/badge/status-in_progress-blue)
